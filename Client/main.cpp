@@ -49,6 +49,8 @@ private:
 
 int main(int argc, char* argv[])
 {
+    QCoreApplication a(argc, argv);
+
   try
   {
     // Check command line arguments.
@@ -68,5 +70,5 @@ int main(int argc, char* argv[])
     cerr << e.what() << endl;
   }
 
-  return 0;
+  return a.exec();
 }

@@ -10,8 +10,13 @@ CONFIG -= app_bundle
 SOURCES += \
         main.cpp
 
+#ifdef Q_OS_WIN
 INCLUDEPATH += D:\Project\Boost\include\boost-1_74
 LIBS += -LD:\Project\Boost\lib
+#elseif Q_OS_LINUX
+INCLUDEPATH += -L/usr/local/include
+LIBS += -L/usr/local/lib
+#endif
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
